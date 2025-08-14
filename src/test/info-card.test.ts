@@ -1,5 +1,5 @@
-import './info-card';
-import { InfoCard } from './info-card';
+import '../components/info-card';
+import { InfoCard } from '../components/info-card';
 
 describe('InfoCard Web Component', () => {
   let card: InfoCard;

@@ -1,5 +1,5 @@
-import './loading-spinner';
-import { LoadingSpinner } from './loading-spinner';
+import '../components/loading-spinner';
+import { LoadingSpinner } from '../components/loading-spinner';
 
 describe('LoadingSpinner Web Component', () => {
   test('spinner renderizado', () => {

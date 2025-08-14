@@ -1,5 +1,5 @@
-import './search-input';
-import { SearchInput } from './search-input';
+import '../components/search-input';
+import { SearchInput } from '../components/search-input';
 
 describe('SearchInput Web input', () => {
   let input: SearchInput & { fetchUser: jest.Mock };
