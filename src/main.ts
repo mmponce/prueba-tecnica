@@ -1,4 +1,4 @@
 import './style.css';
-import './web-components/loading-spinner';
-import './web-components/search-input';
-import './web-components/info-card';
+import './components/loading-spinner';
+import './components/search-input';
+import './components/info-card';
