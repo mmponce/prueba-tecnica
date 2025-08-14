@@ -1,17 +1,38 @@
 html {
   background: rgb(239, 248, 234);
-  #app {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 3rem;
+  body {
+    font-family: 'Roboto', Arial, sans-serif;
+    #app {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 3rem;
 
-    input {
-      border: #71cc555e 4px solid;
-      border-radius: 4px;
-      padding: 4px;
-      width: 20rem;
+      h1 {
+        color: #262729;
+      }
+
+      input {
+        border: #71cc555e 0.25rem solid;
+        border-radius: 0.25rem;
+        padding: 0.25rem;
+        width: 20rem;
+      }
+    }
+
+    @media (max-width: 430px) {
+      #app {
+        padding: 1.5rem;
+        input {
+          width: 100%;
+        }
+        info-card {
+          width: 100%;
+          --card-width: 100%;
+          --card-padding: 0;
+        }
+      }
     }
   }
 }
