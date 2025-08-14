@@ -49,17 +49,23 @@ export class InfoCard extends HTMLElement {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             gap: .5rem;
             width: var(--card-width, 15rem);
-            height: var(--card-height, 12rem);
+            min-height: var(--card-height, 12rem);
             background: var(--card-background, var(--color-white));
-            padding: var(--card-padding, 2rem);
-            border-radius: 1.5rem;
+            padding: var(--card-padding, 1.5rem);
+            border-radius: .75rem;
+            box-shadow: 0 .25rem .625rem rgba(0,0,0,0.06);
+            text-align: center;
 
             .picture {
-              max-width: 3.75rem;
-              min-height: 3.75rem;
+              width: var(--card-image-size, 6.25rem);
+              height: var(--card-image-size, 6.25rem);
               border-radius: 50%;
+              object-fit: cover;
+              box-shadow: 0 .125rem .5rem rgba(0,0,0,0.1);
+              margin-bottom: 1rem;
             }
 
             .repo-count, .link, .biography {
@@ -72,7 +78,20 @@ export class InfoCard extends HTMLElement {
             }
             
             .link {
-              color: var(--link-color, var(--color-green-dark));
+              background: var(--link-color, var(--color-green-dark));
+              color: white;
+              padding: 0.5rem 1rem;
+              border-radius: .5rem;
+              text-decoration: none;
+              font-weight: 500;
+              transition: background 0.2s ease;
+              &:hover {
+                background: var(--link-hover-color, var(--color-green));
+              }
+            }
+            @media (max-width: 27rem) {
+              padding-top: 1rem;
+              padding-bottom: 1rem;
             }
           }
         </style>

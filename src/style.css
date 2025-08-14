@@ -1,5 +1,7 @@
 :root {
   --color-black: #262729;
+  --color-mint: #ecfdf5;
+  --color-mint-light: #f0fdfa;
   --color-green: #71cc55;
   --color-green-light: #71cc555e;
   --color-green-dark: #3b9326;
@@ -8,7 +10,11 @@
 }
 
 html {
-  background: var(--color-background);
+  background: linear-gradient(
+    135deg,
+    var(--color-mint),
+    var(--color-mint-light)
+  );
   body {
     font-family: 'Roboto', Arial, sans-serif;
     #app {
@@ -19,6 +25,7 @@ html {
       padding: 3rem;
 
       h1 {
+        text-align: center;
         color: var(--color-black);
       }
 
@@ -27,10 +34,16 @@ html {
         border-radius: 0.25rem;
         padding: 0.25rem;
         width: 20rem;
+        box-shadow: 0 .125rem .375rem rgba(0, 0, 0, 0.08);
+        margin-bottom: 1.5rem;
+        &:focus {
+          border-color: var(--color-green); /* verde suave */
+          box-shadow: 0 .125rem .5rem rgba(0, 0, 0, 0.08);
+        }
       }
     }
 
-    @media screen and (max-width: 430px) {
+    @media screen and (max-width: 27rem) {
       #app {
         padding: 1.5rem;
         input {
@@ -40,6 +53,7 @@ html {
           width: 100%;
           --card-width: 100%;
           --card-padding: 0;
+          --card-image-size: 3.75rem;
         }
       }
     }
