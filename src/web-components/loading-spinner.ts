@@ -21,11 +21,11 @@ export class LoadingSpinner extends HTMLElement {
             gap: .5rem;
           }
           .spinner {
-            border: 4px solid rgba(0, 0, 0, 0.1);
+            border: .25rem solid rgba(0, 0, 0, 0.1);
             border-left-color: #000;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            width: 2.5rem;
+            height: 2.5rem;
             animation: spin 1s linear infinite;
           }
           @keyframes spin {

@@ -1,5 +1,6 @@
 import { UserAdapter } from '../adapters/userAdapter';
 import type { User } from '../types/types';
+import { SearchInput } from './search-input';
 
 export class InfoCard extends HTMLElement {
   user?: User;
@@ -51,18 +52,19 @@ export class InfoCard extends HTMLElement {
             gap: .5rem;
             width: var(--card-width, 15rem);
             height: var(--card-height, 12rem);
-            background: var(--card-background, white);
+            background: var(--card-background, var(--color-white));
             padding: var(--card-padding, 2rem);
             border-radius: 1.5rem;
 
             .picture {
               max-width: 3.75rem;
               min-height: 3.75rem;
+              border-radius: 50%;
             }
 
             .repo-count, .link, .biography {
               font-size: 0.875rem;
-              color: var(--text-color, #262729);
+              color: var(--text-color, var(--color-black));
             }
 
             .biography {
@@ -70,11 +72,11 @@ export class InfoCard extends HTMLElement {
             }
             
             .link {
-              color: var(--link-color, #3b9326);
+              color: var(--link-color, var(--color-green-dark));
             }
           }
         </style>
-        <section data-testid='info-card' class='card'>
+        <section class='card'>
           ${this.loading ? `<loading-spinner />` : info ? info : errorMessage}
         </section>`;
     }
@@ -85,7 +87,7 @@ export class InfoCard extends HTMLElement {
   }
 
   addEvents(): void {
-    const inputSelector = document.querySelector('input');
+    const inputSelector = document.querySelector<SearchInput>('#finder');
     if (!inputSelector) return;
     inputSelector.addEventListener('loading', () => {
       this.loading = true;

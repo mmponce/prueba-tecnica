@@ -1,5 +1,14 @@
+:root {
+  --color-black: #262729;
+  --color-green: #71cc55;
+  --color-green-light: #71cc555e;
+  --color-green-dark: #3b9326;
+  --color-white: #ffffff;
+  --color-background: rgb(239, 248, 234);
+}
+
 html {
-  background: rgb(239, 248, 234);
+  background: var(--color-background);
   body {
     font-family: 'Roboto', Arial, sans-serif;
     #app {
@@ -10,18 +19,18 @@ html {
       padding: 3rem;
 
       h1 {
-        color: #262729;
+        color: var(--color-black);
       }
 
       input {
-        border: #71cc555e 0.25rem solid;
+        border: var(--color-green-light) 0.25rem solid;
         border-radius: 0.25rem;
         padding: 0.25rem;
         width: 20rem;
       }
     }
 
-    @media (max-width: 430px) {
+    @media screen and (max-width: 430px) {
       #app {
         padding: 1.5rem;
         input {
@@ -31,6 +40,18 @@ html {
           width: 100%;
           --card-width: 100%;
           --card-padding: 0;
+        }
+      }
+    }
+    @media screen and (orientation: landscape) {
+      #app {
+        h1 {
+          margin: 0.5rem auto 0.5rem auto;
+        }
+        padding: 0;
+        gap: 0.5rem;
+        info-card {
+          --card-padding: 1rem;
         }
       }
     }
