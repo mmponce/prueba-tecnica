@@ -2,6 +2,7 @@ export class LoadingSpinner extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
+    this.render();
   }
 
   connectedCallback(): void {

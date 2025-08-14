@@ -8,6 +8,7 @@ export class InfoCard extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
+    this.render();
     this.addEvents();
   }
 
@@ -33,14 +34,14 @@ export class InfoCard extends HTMLElement {
 
   render(): void {
     if (this.shadowRoot) {
-      const errorMessage = `<span class='error'>${this.error}</span>`;
+      const errorMessage = `<span data-testid='error' class='error'>${this.error}</span>`;
       const info =
         this.user &&
-        `<img class='picture' src='${this.user?.avatarUrl}' alt='${this.user?.avatarUrl}' />
-        ${this.user?.name ? `<span class='name'>Nombre: ${this.user?.name}</span>` : ''}
-        ${this.user?.bio ? `<div class='biography'>Bio: ${this.user?.bio}</div>` : ''}
-        ${this.user?.publicRepos ? `<span class='repo-count'>Número de repositorios: ${this.user?.publicRepos}</span>` : ''}
-        <a class='link' href='${this.user?.htmlUrl}'>Link de perfil</a>`;
+        `<img data-testid='picture' class='picture' src='${this.user?.avatarUrl}' alt='${this.user?.avatarUrl}' />
+        ${this.user?.name ? `<span data-testid='name' class='name'>Nombre: ${this.user?.name}</span>` : ''}
+        ${this.user?.bio ? `<div data-testid='biography' class='biography'>Bio: ${this.user?.bio}</div>` : ''}
+        ${this.user?.publicRepos ? `<span data-testid='repo-count' class='repo-count'>Número de repositorios: ${this.user?.publicRepos}</span>` : ''}
+        <a data-testid='link' class='link' href='${this.user?.htmlUrl}'>Link de perfil</a>`;
       this.shadowRoot.innerHTML = `
         <style>
           .card {
@@ -73,7 +74,7 @@ export class InfoCard extends HTMLElement {
             }
           }
         </style>
-        <section class='card'>
+        <section data-testid='info-card' class='card'>
           ${this.loading ? `<loading-spinner />` : info ? info : errorMessage}
         </section>`;
     }
